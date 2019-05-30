@@ -1,0 +1,160 @@
+Last login: Thu May 30 15:44:25 on ttys001
+You have new mail.
+lab2132m:~ user$ mkdir
+usage: mkdir [-pv] [-m mode] directory ...
+lab2132m:~ user$ 
+lab2132m:~ user$ cd desktop
+lab2132m:desktop user$ cd vilen
+-bash: cd: vilen: No such file or directory
+lab2132m:desktop user$ mkdir dzmerukichir
+lab2132m:desktop user$ /touch dambulikut popokimuraba
+-bash: /touch: No such file or directory
+lab2132m:desktop user$ touch dambulikut popokimuraba
+lab2132m:desktop user$ cd dzmerukichir
+lab2132m:dzmerukichir user$ cd ~/Desktop
+lab2132m:Desktop user$ git clone Progrhhh
+fatal: repository 'Progrhhh' does not exist
+lab2132m:Desktop user$ cd ~/Desktop
+lab2132m:Desktop user$ git clone README.md
+fatal: repository 'README.md' does not exist
+lab2132m:Desktop user$ cd Progrhhh
+-bash: cd: Progrhhh: No such file or directory
+lab2132m:Desktop user$ cd ~/Desktop
+lab2132m:Desktop user$ git clone Progrhhh
+fatal: repository 'Progrhhh' does not exist
+lab2132m:Desktop user$ cd Progrhhh
+-bash: cd: Progrhhh: No such file or directory
+lab2132m:Desktop user$ 
+
+
+
+
+
+
+
+
+
+  [Restored May 30, 2019, 5:15:37 PM]
+Last login: Thu May 30 17:15:34 on console
+You have new mail.
+Restored session: Thu May 30 16:53:46 +04 2019
+lab2132m:Desktop user$ 
+lab2132m:Desktop user$ 
+lab2132m:Desktop user$ 
+lab2132m:Desktop user$ cd ~/
+lab2132m:~ user$ cd mkdir
+-bash: cd: mkdir: No such file or directory
+lab2132m:~ user$ cd rm
+-bash: cd: rm: No such file or directory
+lab2132m:~ user$ mkdir ciran.htlm
+lab2132m:~ user$ 
+lab2132m:~ user$ cd ~/ 
+lab2132m:~ user$ desktop
+-bash: desktop: command not found
+lab2132m:~ user$ 
+lab2132m:~ user$ cd desktop
+lab2132m:desktop user$ cd mkdir masha
+-bash: cd: mkdir: No such file or directory
+lab2132m:desktop user$ 
+lab2132m:desktop user$ mkdir just
+lab2132m:desktop user$ rm just
+rm: just: is a directory
+lab2132m:desktop user$ 
+lab2132m:desktop user$ rmdir just
+lab2132m:desktop user$ 
+lab2132m:desktop user$ touch kria.html
+lab2132m:desktop user$ 
+lab2132m:desktop user$ cd desktop
+-bash: cd: desktop: No such file or directory
+lab2132m:desktop user$ 
+lab2132m:desktop user$ desktop
+-bash: desktop: command not found
+lab2132m:desktop user$ mkdir just
+lab2132m:desktop user$ touch tzuk.html
+lab2132m:desktop user$ 
+lab2132m:desktop user$ cd just
+lab2132m:just user$ touch tzuk.html
+lab2132m:just user$ 
+lab2132m:just user$ pwd
+/Users/user/desktop/just
+lab2132m:just user$ 
+lab2132m:just user$ 
+lab2132m:just user$ ls
+tzuk.html
+lab2132m:just user$ 
+lab2132m:just user$ ls-1
+-bash: ls-1: command not found
+lab2132m:just user$ 
+lab2132m:just user$ rmdir just
+rmdir: just: No such file or directory
+lab2132m:just user$ 
+lab2132m:just user$ desktp
+-bash: desktp: command not found
+lab2132m:just user$ rmdir just
+rmdir: just: No such file or directory
+lab2132m:just user$ 
+lab2132m:just user$ desktop
+-bash: desktop: command not found
+lab2132m:just user$ rmdir just
+rmdir: just: No such file or directory
+lab2132m:just user$ 
+lab2132m:just user$ just
+-bash: just: command not found
+lab2132m:just user$ rmdir just
+rmdir: just: No such file or directory
+lab2132m:just user$ 
+lab2132m:just user$ git clone https://github.com/loretalola/prog3.git
+Cloning into 'prog3'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+lab2132m:just user$ 
+lab2132m:just user$ cd ~/desktop
+lab2132m:desktop user$ git clone https://github.com/loretalola/prog3.git
+Cloning into 'prog3'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+lab2132m:desktop user$ 
+lab2132m:desktop user$ git clone https://github.com/loretalola/prog3.git
+fatal: destination path 'prog3' already exists and is not an empty directory.
+lab2132m:desktop user$ cd Lesson1
+-bash: cd: Lesson1: No such file or directory
+lab2132m:desktop user$ 
+lab2132m:desktop user$ git clone https://github.com/loretalola/prog3.git
+fatal: destination path 'prog3' already exists and is not an empty directory.
+lab2132m:desktop user$ git clone https://github.com/loretalola/prog3.git
+fatal: destination path 'prog3' already exists and is not an empty directory.
+lab2132m:desktop user$ cd prog3
+lab2132m:prog3 user$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+lab2132m:prog3 user$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+lab2132m:prog3 user$ git commit -m "Lesson1"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@lab2132m.(none)')
+lab2132m:prog3 user$ git push -u origin master
+Username for 'https://github.com': loretalola
+Password for 'https://loretalola@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/loretalola/prog3.git/'
+lab2132m:prog3 user$ 
+lab2132m:prog3 user$ 
