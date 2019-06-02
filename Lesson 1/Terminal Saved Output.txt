@@ -1,4 +1,4 @@
-Last login: Thu May 30 15:44:25 on ttys001
+ggLast login: Thu May 30 15:44:25 on ttys001
 You have new mail.
 lab2132m:~ user$ mkdir
 usage: mkdir [-pv] [-m mode] directory ...
