@@ -16,10 +16,6 @@ module.exports = class Hunter extends LivingCreature{
             [this.x - 1, this.y + 1],
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
-
-
-
-            
         ];
     }
     chooseCell(character) {
@@ -47,7 +43,6 @@ module.exports = class Hunter extends LivingCreature{
     }
     kill() {
 
-
         var newCell = random(this.chooseCell(3));
 
         if (newCell) {
@@ -63,11 +58,11 @@ module.exports = class Hunter extends LivingCreature{
                     break;
                 }
             }
-
-
+            
             this.y = newY;
             this.x = newX;
             this.energy += 2;
+            grassHashiv++;
         }
 
     }
@@ -80,6 +75,7 @@ module.exports = class Hunter extends LivingCreature{
             HunterArr.push(newHunter);
             matrix[newCell[1]][newCell[0]] = 4;
             this.energy = 5;
+            grassHashiv++;
         }
     }
     die() {

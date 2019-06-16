@@ -86,11 +86,10 @@ module.exports = class Werewolf extends LivingCreature{
                 }
             }
 
-
-
             this.y = newY;
             this.x = newX;
             this.energy += 1;
+            grassHashiv++;
         }
 
     }
@@ -103,6 +102,7 @@ module.exports = class Werewolf extends LivingCreature{
             WerewolfArr.push(newWerewolf);
             matrix[newCell[1]][newCell[0]] = 5;
             this.energy = 5;
+            grassHashiv++;
         }
     }
     die() {
