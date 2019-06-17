@@ -62,7 +62,7 @@ module.exports = class Hunter extends LivingCreature{
             this.y = newY;
             this.x = newX;
             this.energy += 2;
-            grassHashiv++;
+            hunterHashiv++;
         }
 
     }
@@ -75,7 +75,7 @@ module.exports = class Hunter extends LivingCreature{
             HunterArr.push(newHunter);
             matrix[newCell[1]][newCell[0]] = 4;
             this.energy = 5;
-            grassHashiv++;
+            hunterHashiv++;
         }
     }
     die() {

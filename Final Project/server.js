@@ -12,7 +12,10 @@ hunterArr = [];
 werewolfArr = [];
 matrix = [];
 grassHashiv = 0;
-
+grassEaterHashiv = 0;
+predatorHashiv = 0;
+hunterHashiv = 0;
+werewolfHashiv = 0;
 
 
 function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewolf) {
@@ -32,17 +35,17 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewo
         let customY = Math.floor(random(matrixSize));
         matrix[customY][customX] = 2;
     }
-    for (let i = 0; i < grassEaterEater; i++) {
+    for (let i = 0; i < predator; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
         matrix[customY][customX] = 3;
     }
-    for (let i = 0; i < waterArr; i++) {
+    for (let i = 0; i < hunter; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
         matrix[customY][customX] = 4;
     }
-    for (let i = 0; i < fireArr; i++) {
+    for (let i = 0; i < werewolf; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
         matrix[customY][customX] = 5;
@@ -66,6 +69,7 @@ function creatingObjects() {
             if (matrix[y][x] == 2) {
                 var grassEater = new GrassEater(x, y);
                 grassEaterArr.push(grassEater);
+                grassEaterHashiv++;
             } else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
                 grassArr.push(grass);
@@ -74,17 +78,17 @@ function creatingObjects() {
             else if (matrix[y][x] == 3) {
                 var grass = new Predator(x, y);
                 predatorArr.push(predator);
-                grassHashiv++;
+                predatorHashiv++;
             }
             else if (matrix[y][x] == 4) {
                 var grass = new Hunter(x, y);
                 hunterArr.push(hunter);
-                grassHashiv++;
+                hunterHashiv++;
             }
             else if (matrix[y][x] == 5) {
                 var grass = new Werewolf(x, y);
                 werewolfrArr.push(werewolf);
-                grassHashiv++;
+                werewolfHashiv++;
             }
         }
     }
@@ -103,10 +107,11 @@ function game() {
         }
     }
     
+    //harcnel stex petq a avelacnel mnacac kerparnery
 
     let sendData = {
         matrix: matrix,
-        grassCounter: grassHashiv
+        grassCounter: grassHashiv 
     }
 
     io.sockets.emit("data", sendData);
