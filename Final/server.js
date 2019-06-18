@@ -16,6 +16,8 @@ grassEaterHashiv = 0;
 predatorHashiv = 0;
 hunterHashiv = 0;
 werewolfHashiv = 0;
+seasons = '"';
+count = 10;
 
 
 function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewolf) {
@@ -51,7 +53,9 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewo
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(20, 1, 1);
+matrixGenerator(20, 10, 8, 5, 3, 2);
+
+
 
 var express = require('express');
 var app = express();
@@ -70,28 +74,30 @@ function creatingObjects() {
                 var grassEater = new GrassEater(x, y);
                 grassEaterArr.push(grassEater);
                 grassEaterHashiv++;
-            } else if (matrix[y][x] == 1) {
+            }
+             else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
                 grassArr.push(grass);
                 grassHashiv++;
             }
             else if (matrix[y][x] == 3) {
-                var grass = new Predator(x, y);
+                var predator = new Predator(x, y);
                 predatorArr.push(predator);
                 predatorHashiv++;
             }
             else if (matrix[y][x] == 4) {
-                var grass = new Hunter(x, y);
+                var hunter  = new Hunter(x, y);
                 hunterArr.push(hunter);
                 hunterHashiv++;
             }
             else if (matrix[y][x] == 5) {
-                var grass = new Werewolf(x, y);
-                werewolfrArr.push(werewolf);
+                var werewolf = new Werewolf(x, y);
+                werewolfArr.push(werewolf);
                 werewolfHashiv++;
             }
         }
     }
+    console.log(werewolf);
 }
 creatingObjects();
 
@@ -103,15 +109,52 @@ function game() {
     }
     if (grassEaterArr[0] !== undefined) {
         for (var i in grassEaterArr) {
+            grassEaterArr[i].move();
             grassEaterArr[i].eat();
+            grassEaterArr[i].mul();
+            grassEaterArr[i].die();
         }
     }
-    
-    //harcnel stex petq a avelacnel mnacac kerparnery
+    if (predatorArr[0] !== undefined) {
+        for (var i in predatorArr) {
+            predatorArr[i].move();
+            predatorArr[i].eat();
+            predatorArr[i].mul();
+            predatorArr[i].die();
+            
+        }
+    }
+    if (hunterArr[0] !== undefined) {
+        for (var i in hunterArr) {
+            hunterArr[i].move();
+            hunterArr[i].kill();
+            hunterArr[i].mul();
+            hunterArr[i].die();
+        }
+    }
+    if (werewolfArr[0] !== undefined) {
+        for (var i in hunterArr) {
+            werewolfArr[i].move();
+            werewolfArr[i].kill();
+            werewolfArr[i].mul();
+            werewolfArr[i].die();
+        }
+    }
+
+
+    if(seasons == "spring" ){
+        
+        predator[i].die();
+    }
+
 
     let sendData = {
         matrix: matrix,
-        grassCounter: grassHashiv 
+        grassCounter: grassHashiv,
+        grassEaterCount: grassEaterHashiv,
+        predatorCount: predatorHashiv,
+        hunterCount: hunterHashiv,
+        werewolfCount: werewolfHashiv,       
     }
 
     io.sockets.emit("data", sendData);

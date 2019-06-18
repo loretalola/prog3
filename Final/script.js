@@ -34,6 +34,8 @@ function setup() {
 
         matrix = data.matrix;
         werewolfCountElement.innerText = data.werewolfCounter;
+
+        console.log(matrix);
         
         createCanvas(matrix[0].length * side, matrix.length * side)
         
