@@ -160,7 +160,6 @@ function game() {
     io.sockets.emit("data", sendData);
 }
 
-
 setInterval(game, 1000)
 
 
