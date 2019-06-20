@@ -60,8 +60,6 @@ module.exports = class Werewolf extends LivingCreature{
 
     }
     kill() {
-
-
         var newCells1 = this.chooseCell(4);
         var newCells2 = this.chooseCell(3);
         var newCells = newCells1.concat(newCells2);
@@ -89,9 +87,8 @@ module.exports = class Werewolf extends LivingCreature{
             this.y = newY;
             this.x = newX;
             this.energy += 1;
-            werewolfHashiv++;
+            werewolfHashiv++;    
         }
-
     }
     mul() {
 
@@ -116,6 +113,4 @@ module.exports = class Werewolf extends LivingCreature{
             }
         }
     }
-
-
 }

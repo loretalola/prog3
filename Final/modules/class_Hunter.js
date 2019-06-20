@@ -56,6 +56,7 @@ module.exports = class Hunter extends LivingCreature{
                 if (newX == PredatorArr[i].x && newY == PredatorArr[i].y) {
                     PredatorArr.splice(i, 1);
                     break;
+                    
                 }
             }
             
@@ -64,7 +65,6 @@ module.exports = class Hunter extends LivingCreature{
             this.energy += 2;
             hunterHashiv++;
         }
-
     }
     mul() {
 

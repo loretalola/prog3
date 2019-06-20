@@ -1,5 +1,3 @@
-
-
 function setup() {
 
     var socket = io();
@@ -12,7 +10,7 @@ function setup() {
     let grassCountElement = document.getElementById('grassCount');
     let grassEaterCountElement = document.getElementById('grassEaterCount');
     let predatorCountElement = document.getElementById('predatorCount');
-    let hunterCountElement = document.getElementById('predatorCount');
+    let hunterCountElement = document.getElementById('hunterCount');
     let werewolfCountElement = document.getElementById('werewolfCount');
 
     

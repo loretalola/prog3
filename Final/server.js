@@ -7,17 +7,17 @@ let random = require('./modules/random');
 
 grassArr = [];
 grassEaterArr = [];
-predatorArr = [];
-hunterArr = [];
-werewolfArr = [];
+PredatorArr = [];
+HunterArr = [];
+WerewolfArr = [];
 matrix = [];
 grassHashiv = 0;
 grassEaterHashiv = 0;
 predatorHashiv = 0;
 hunterHashiv = 0;
 werewolfHashiv = 0;
-seasons = '"';
-count = 10;
+// seasons = '"';
+// count = 10;
 
 
 function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewolf) {
@@ -53,7 +53,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewo
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(20, 10, 8, 5, 3, 2);
+matrixGenerator(20, 10, 9, 7, 4, 2);
 
 
 
@@ -82,22 +82,22 @@ function creatingObjects() {
             }
             else if (matrix[y][x] == 3) {
                 var predator = new Predator(x, y);
-                predatorArr.push(predator);
+                PredatorArr.push(predator);
                 predatorHashiv++;
             }
             else if (matrix[y][x] == 4) {
                 var hunter  = new Hunter(x, y);
-                hunterArr.push(hunter);
+                HunterArr.push(hunter);
                 hunterHashiv++;
             }
             else if (matrix[y][x] == 5) {
                 var werewolf = new Werewolf(x, y);
-                werewolfArr.push(werewolf);
+                WerewolfArr.push(werewolf);
                 werewolfHashiv++;
             }
         }
     }
-    console.log(werewolf);
+    // console.log(werewolf);
 }
 creatingObjects();
 
@@ -115,38 +115,35 @@ function game() {
             grassEaterArr[i].die();
         }
     }
-    if (predatorArr[0] !== undefined) {
-        for (var i in predatorArr) {
-            predatorArr[i].move();
-            predatorArr[i].eat();
-            predatorArr[i].mul();
-            predatorArr[i].die();
+    if (PredatorArr[0] !== undefined) {
+        for (var i in PredatorArr) {
+            PredatorArr[i].move();
+            PredatorArr[i].eat();
+            PredatorArr[i].mul();
+            PredatorArr[i].die();
             
         }
     }
-    if (hunterArr[0] !== undefined) {
-        for (var i in hunterArr) {
-            hunterArr[i].move();
-            hunterArr[i].kill();
-            hunterArr[i].mul();
-            hunterArr[i].die();
+    if (HunterArr[0] !== undefined) {
+        for (var i in HunterArr) {
+            HunterArr[i].move();
+            HunterArr[i].kill();
+            HunterArr[i].mul();
+            HunterArr[i].die();
         }
     }
-    if (werewolfArr[0] !== undefined) {
-        for (var i in hunterArr) {
-            werewolfArr[i].move();
-            werewolfArr[i].kill();
-            werewolfArr[i].mul();
-            werewolfArr[i].die();
+    if (WerewolfArr[0] !== undefined) {
+        for (var i in WerewolfArr) {
+            WerewolfArr[i].move();
+            WerewolfArr[i].kill();
+            WerewolfArr[i].mul();
+            WerewolfArr[i].die();
         }
     }
 
-
-    if(seasons == "spring" ){
-        
-        predator[i].die();
-    }
-
+    // if(seasons == "spring" ){
+    //     predator.die();
+    // }
 
     let sendData = {
         matrix: matrix,
@@ -160,7 +157,4 @@ function game() {
     io.sockets.emit("data", sendData);
 }
 
-setInterval(game, 1000)
-
-
-
+setInterval(game, 1000) 
