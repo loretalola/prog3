@@ -19,7 +19,7 @@ werewolfHashiv = 0;
 // seasons = '"';
 // count = 10;
 
-
+// just
 function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewolf) {
     for (let i = 0; i < matrixSize; i++) {
         matrix[i] = [];
