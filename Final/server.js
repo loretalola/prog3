@@ -11,15 +11,16 @@ PredatorArr = [];
 HunterArr = [];
 WerewolfArr = [];
 matrix = [];
+
 grassHashiv = 0;
 grassEaterHashiv = 0;
 predatorHashiv = 0;
 hunterHashiv = 0;
 werewolfHashiv = 0;
-// seasons = '"';
-// count = 10;
+season = '"';
+count = 10;
 
-// just
+
 function matrixGenerator(matrixSize, grass, grassEater, predator, hunter, werewolf) {
     for (let i = 0; i < matrixSize; i++) {
         matrix[i] = [];
@@ -97,12 +98,61 @@ function creatingObjects() {
             }
         }
     }
-    // console.log(werewolf);
 }
 creatingObjects();
 
 function game() {
-    if (grassArr[0] !== undefined) {
+// count++
+// if(count <= 10){
+//     season = "winter"
+// }
+// else if(count <= 20){
+//     season = "spring"
+// }
+// else if(count <= 30){
+//     season = "summer"
+// }
+// else if(count <= 40){
+//     season = "fall"
+// }
+
+// if(season = "winter"){
+//     for (var i in PredatorArr) {
+//         predator.die()
+//     } 
+// }
+// else if(season = "spring"){
+//     for (var i in Grass) {
+//         grass.mul(3)
+//     } 
+// }
+// else if(season = "winter"){
+//     for(var i in Hunter){
+//         hunter.die
+//     }
+// }
+if  (count == 75){
+    count = 0;
+}
+
+if (count <= 30) {
+    season = "Spring";
+}
+else if(count > 30 && count <= 45) {
+    season = "Summer";
+}
+else if (count > 45 && count <= 60) {
+
+    season = "Autumn";
+}
+else if (count > 60 && count <= 75) {
+    season = "Winter";
+}
+
+count++;
+
+
+    if (grassArr[0] !== undefined && season == "Winter") {
         for (var i in grassArr) {
             grassArr[i].mul();
         }
@@ -115,7 +165,7 @@ function game() {
             grassEaterArr[i].die();
         }
     }
-    if (PredatorArr[0] !== undefined) {
+    if (PredatorArr[0] !== undefined && season == "Spring") {
         for (var i in PredatorArr) {
             PredatorArr[i].move();
             PredatorArr[i].eat();
@@ -141,17 +191,14 @@ function game() {
         }
     }
 
-    // if(seasons == "spring" ){
-    //     predator.die();
-    // }
-
     let sendData = {
         matrix: matrix,
         grassCounter: grassHashiv,
         grassEaterCount: grassEaterHashiv,
         predatorCount: predatorHashiv,
         hunterCount: hunterHashiv,
-        werewolfCount: werewolfHashiv,       
+        werewolfCount: werewolfHashiv,
+        countCounter: season,     
     }
 
     io.sockets.emit("data", sendData);

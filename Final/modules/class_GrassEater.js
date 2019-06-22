@@ -92,7 +92,7 @@ module.exports = class GrassEater extends LivingCreature {
             for (var i in grassEaterArr) {
                 if (this.X == grassEaterArr[i].x && this.y == grassEaterArr[i].y) {
                     grassEaterArr.splice(i, 1)
-                    grassHashiv++;
+                    grassEaterHashiv++;
 
                 }
             }
